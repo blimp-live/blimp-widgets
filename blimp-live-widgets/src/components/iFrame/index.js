@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class iFrame extends Component { 
 	render() { 
 		return { 
-			
+			<iframe></iframe>			
  		} 
 
 	} 
