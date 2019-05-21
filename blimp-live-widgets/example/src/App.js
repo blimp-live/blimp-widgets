@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import {ExampleComponent, HelloWorld, IFrameComponent} from 'blimp-live-widgets'
+import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes} from 'blimp-live-widgets'
 
 export default class App extends Component {
   render () {
@@ -9,6 +9,7 @@ export default class App extends Component {
         <ExampleComponent text='Modern React component module' />
         <HelloWorld />
         <IFrameComponent url="https://www.youtube.com/embed/h_m-BjrxmgI" />
+        <Clock width={300} theme={ClockThemes.navy} />
       </div>
     )
   }
