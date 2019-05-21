@@ -9,7 +9,7 @@ export default class App extends Component {
         <ExampleComponent text='Modern React component module' />
         <HelloWorld />
         <IFrameComponent url="https://www.youtube.com/embed/h_m-BjrxmgI" />
-        <Clock width={300} theme={ClockThemes.navy} />
+        <Clock width={300} theme={ClockThemes.navy} showSmallTicks={false}/>
       </div>
     )
   }

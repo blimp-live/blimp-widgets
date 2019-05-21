@@ -69,7 +69,7 @@ Clock.propTypes = {
 };
 
 Clock.defaultProps = {
-  theme: Themes.light,
+  theme: Themes.dark,
   width: 400,
   showSmallTicks: true,
 };
