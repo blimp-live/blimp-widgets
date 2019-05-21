@@ -5,12 +5,12 @@ import PropTypes from 'prop-types'
 import HelloWorld from './components/HelloWorld';
 import ExampleComponent from './components/ExampleComponent';
 import Clock from './components/Clock';
-import iFrame from './components/iFrame'; 
+import IFrameComponent from './components/iFrame';
 
 // Export it here
 export {
   HelloWorld,
   ExampleComponent,
   Clock,
-  iFrame
+  IFrameComponent,
 }
