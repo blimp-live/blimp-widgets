@@ -6,6 +6,8 @@ import HelloWorld from './components/HelloWorld';
 import ExampleComponent from './components/ExampleComponent';
 import Clock, { ClockThemes } from './components/Clock';
 import IFrameComponent from './components/iFrame';
+import Schedule from './components/Schedule';
+
 
 // Export it here
 export {
@@ -14,4 +16,5 @@ export {
   Clock,
   ClockThemes,
   IFrameComponent,
+  Schedule,
 }
