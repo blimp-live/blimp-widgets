@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+import styles from './twitter-feed.module.css'
 
 export default class TwitterComponent extends Component {
+	static propTypes = {
+		account: PropTypes.string
+	}
 
 	componentDidMount() {
 		window.twttr = (function(d, s, id) {
@@ -15,16 +20,23 @@ export default class TwitterComponent extends Component {
 			return t;
 		}(document, "script", "twitter-wjs"));
   }
-	
+
   render() {
+		var account = this.props.account ? this.props.account : "TwitterDev";
+
     return (
-			<div>
-				<a class="twitter-timeline"
-				  href="https://twitter.com/TwitterDev"
-				  data-width="400"
-				  data-height="400">
-				Tweets by @TwitterDev
-				</a>
+			<div className={styles.twitterContainer}>
+				<div className="panel-heading">
+					 <h3 className="panel-title">
+							{account}
+					 </h3>
+				</div>
+				<div>
+					<a className="twitter-timeline"
+					  href={ "https://twitter.com/" + account }
+						data-chrome="nofooter">
+					</a>
+				</div>
 			</div>
 		)
   }
