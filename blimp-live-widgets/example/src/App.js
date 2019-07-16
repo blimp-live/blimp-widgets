@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown} from 'blimp-live-widgets'
+import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText} from 'blimp-live-widgets'
 
 export default class App extends Component {
   render () {
@@ -10,8 +10,8 @@ export default class App extends Component {
         <HelloWorld />
         <IFrameComponent url="https://www.youtube.com/embed/h_m-BjrxmgI" />
         <Clock width={300} theme={ClockThemes.navy} showSmallTicks={false}/>
-        <br/>
         <Countdown />
+        <ScrollingText text='Here is a test' />
       </div>
     )
   }

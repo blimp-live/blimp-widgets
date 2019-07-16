@@ -7,6 +7,7 @@ import ExampleComponent from './components/ExampleComponent';
 import Clock, { ClockThemes } from './components/Clock';
 import IFrameComponent from './components/iFrame';
 import Countdown from './components/Countdown';
+import ScrollingText from './components/ScrollingText';
 
 // Export it here
 export {
@@ -16,4 +17,5 @@ export {
   ClockThemes,
   IFrameComponent,
   Countdown,
+  ScrollingText,
 }
