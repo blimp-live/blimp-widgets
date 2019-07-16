@@ -15,5 +15,5 @@ export {
   Clock,
   ClockThemes,
   IFrameComponent,
-  Countdown
+  Countdown,
 }
