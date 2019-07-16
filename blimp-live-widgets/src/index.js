@@ -6,6 +6,7 @@ import HelloWorld from './components/HelloWorld';
 import ExampleComponent from './components/ExampleComponent';
 import Clock, { ClockThemes } from './components/Clock';
 import IFrameComponent from './components/iFrame';
+import ScrollingText from './components/ScrollingText';
 
 // Export it here
 export {
@@ -14,4 +15,5 @@ export {
   Clock,
   ClockThemes,
   IFrameComponent,
+  ScrollingText,
 }
