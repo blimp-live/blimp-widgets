@@ -8,6 +8,7 @@ import Clock, { ClockThemes } from './components/Clock';
 import IFrameComponent from './components/iFrame';
 import Countdown from './components/Countdown';
 import ScrollingText from './components/ScrollingText';
+import TwitterComponent from './components/Twitter';
 
 // Export it here
 export {
@@ -18,4 +19,5 @@ export {
   IFrameComponent,
   Countdown,
   ScrollingText,
+  TwitterComponent,
 }

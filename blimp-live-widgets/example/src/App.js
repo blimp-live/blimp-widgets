@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-
-import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText} from 'blimp-live-widgets'
+import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent} from 'blimp-live-widgets'
 
 export default class App extends Component {
   render () {
@@ -20,6 +19,7 @@ export default class App extends Component {
         <Clock width={300} theme={ClockThemes.navy} showSmallTicks={false}/>
         <Countdown />
         <ScrollingText text='Here is a test' />
+        <TwitterComponent account="HackTheNorth" />
       </div>
     )
   }
