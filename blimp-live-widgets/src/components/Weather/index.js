@@ -8,7 +8,6 @@ export default class Weather extends Component {
     super(props);
     this.state = {
       weather: {
-        city: "Waterloo",
         temperature: 0,
         main: "None",
         description: "None",
@@ -18,32 +17,26 @@ export default class Weather extends Component {
   }
 
    componentDidMount() {
-    fetch("http://api.openweathermap.org/data/2.5/weather?q=Waterloo,CA&appid=d79a0d378573a8b844d4a8b7e1c963d6")
+    // TODO: Eventually we don't want to have this appid hardcoded; deal with it later
+    fetch("http://api.openweathermap.org/data/2.5/weather?q="+this.props.city+"&units="+this.props.units+"&appid=d79a0d378573a8b844d4a8b7e1c963d6")
       .then(function(res){
         return res.json();
       })
       .then(
         (result) => {
-          console.log("TEST")
-
-          console.log(result)
           this.setState({
             weather: {
-              city: result.name,
-              temperature: Math.round(result.main.temp - 273),
+              temperature: result.main.temp ,
               main: result.weather[0].main,
               description: result.weather[0].description
             },
             isLoaded: true
           });
-
-          console.log(this.state)
         },
         // Note: it's important to handle errors here
         // instead of a catch() block so that we don't swallow
         // exceptions from actual bugs in components.
         (error) => {
-          console.log(error)
           this.setState({
             isLoaded: true,
             error
@@ -53,9 +46,8 @@ export default class Weather extends Component {
   }
 
   render() {
-    const error = this.state.error;
-    const isLoaded = this.state.isLoaded;
-    const weather = this.state.weather;
+    const {error, isLoaded, weather} = this.state;
+    const city = this.props.city;
 
     if (error) {
       return <div>Error: {error.message}</div>;
@@ -64,7 +56,7 @@ export default class Weather extends Component {
     } else {
       return (
         <div>
-          <h3 className = {styles.city}> {weather.city} </h3>
+          <h3 className = {styles.city}> {city} </h3>
           <p className = {styles.temperature}> {weather.temperature} </p>
           <p className = {styles.main}> {weather.main} </p>
           <p className = {styles.description}> {weather.description} </p>
