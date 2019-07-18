@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent, Weather} from 'blimp-live-widgets'
+<<<<<<< e0f856fdeb80444858717493d7f6a5cb28f021c7
 
+=======
+>>>>>>> Created weather widget
 
 export default class App extends Component {
   render () {
