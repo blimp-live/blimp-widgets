@@ -25,6 +25,7 @@ export default class Weather extends Component {
       })
       .then(
         (result) => {
+          //Need to do error checking here in case something is unavailable. Need some sort of standard though
           this.setState({
             weather: {
               temperature: result.main.temp ,

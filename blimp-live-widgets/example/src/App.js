@@ -19,7 +19,6 @@ export default class App extends Component {
         <Clock width={300} theme={ClockThemes.navy} showSmallTicks={false}/>
         <Countdown />
         <ScrollingText text='Here is a test' />
-        <Weather />
         <TwitterComponent account="HackTheNorth" />
         <Weather city="Toronto" units="metric"/>
       </div>
