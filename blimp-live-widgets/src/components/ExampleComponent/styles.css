@@ -3,6 +3,7 @@
 .test {
   display: inline-block;
   margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+  border: 2px solid transparent;
+  font-size: 12px;
+  font-family: "Times New Roman";
 }
