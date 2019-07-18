@@ -19,6 +19,7 @@ export default class Weather extends Component {
    componentDidMount() {
     // TODO: Eventually we don't want to have this appid hardcoded; deal with it later
     fetch("http://api.openweathermap.org/data/2.5/weather?q="+this.props.city+"&units="+this.props.units+"&appid=d79a0d378573a8b844d4a8b7e1c963d6")
+
       .then(function(res){
         return res.json();
       })
