@@ -24,7 +24,7 @@ export default class App extends Component {
         <Countdown />
         <ScrollingText text='Here is a test' />
         <TwitterComponent account="HackTheNorth" />
-        <Weather />
+        <Weather city="Toronto" units="metric"/>
       </div>
     )
   }
