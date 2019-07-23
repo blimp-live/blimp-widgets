@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent} from 'blimp-live-widgets'
 
 export default class App extends Component {
+
   render () {
+
     return (
       <div>
         <ExampleComponent

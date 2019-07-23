@@ -6,7 +6,7 @@ export default class HelloWorld extends Component {
 
     return (
       <div>
-        Hello World!
+        Slut World!
       </div>
     )
   }
