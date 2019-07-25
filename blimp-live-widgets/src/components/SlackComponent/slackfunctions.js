@@ -12,7 +12,7 @@ export function requestAuthorize() {
 
   var queryParams = querystring.stringify({
     client_id: "703442889253.697119810961",
-    scope: "channels:read",
+    scope: "channels:history",
   });
 
   var queryURL = "https://slack.com/oauth/authorize" + queryParams
@@ -53,7 +53,7 @@ export function requestAuthorize() {
 //     })
 // })
 
-export function requestAccessToken(clientId, code, redirectURL) {
+export function requestAccessToken(state, clientId, code, redirectURL) {
   console.log("requestAccessToken");
 
   var queryParams = querystring.stringify({
@@ -85,13 +85,16 @@ export function requestAccessToken(clientId, code, redirectURL) {
   //     }
   // )
 
-  fetch(queryURL, {
+  var authToken = null;
+
+  const token = fetch(queryURL, {
     method: 'POST',
     headers: {
       // 'Access-Control-Allow-Origin':'*',
       // 'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       // 'Access-Control-Allow-Headers': 'Authorization',
-      'Authorization': 'Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3', // this is to encrypt the client id and client secret
+      'Content-Type': 'application/x-www-form-urlencoded',
+      // 'Authorization': 'Basic czZCaGRSa3F0Mzo3RmpmcDBaQnIxS3REUmJuZlZkbUl3', // this is to encrypt the client id and client secret
     },
     //mode: 'no-cors',
     body: queryParams,
@@ -103,11 +106,15 @@ export function requestAccessToken(clientId, code, redirectURL) {
     ).then( res => {
       console.log(`No ERROR: ${res.status}`);
       console.log(res.data);
+      authToken = res.data["access_token"];
+      console.log("Access Token 1: " + authToken);
+      state.setState({token: authToken});
     }).catch(
       (err) => {
         console.error(`NETWORK ERROR: ${err.message}`);
       }
     )
+
 
     /* State of code rn:
       https://stackoverflow.com/questions/45752537/slack-incoming-webhook-request-header-field-content-type-is-not-allowed-by-acce  states
@@ -135,6 +142,39 @@ export function requestAccessToken(clientId, code, redirectURL) {
   //     console.error(`NETWORK ERROR in oauth authorize: ${err.message}`)
   //   }
   // )
+}
+
+export function readChat(state, authToken) {
+  console.log("readChat " + authToken);
+
+  var queryParams = querystring.stringify({
+    token: authToken,
+    channel: "CLH2JRSRX",
+  });
+
+  var queryURL = "https://slack.com/api/conversations.history";
+
+  const token = fetch(queryURL, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: queryParams,
+  }).then( (response) =>
+    response.json().then(data => ({
+        data: data,
+        status: response.status
+    }))
+    ).then( res => {
+      console.log(res.data);
+      state.setState({
+        conversationList: res.data.messages
+        });
+    }).catch(
+      (err) => {
+        console.error(`NETWORK ERROR: ${err.message}`);
+      }
+    )
 }
 
 //https://stackoverflow.com/questions/45696999/fetch-unexpected-end-of-input
