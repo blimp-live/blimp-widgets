@@ -6,7 +6,7 @@ import '!style-loader!css-loader!react-big-calendar/lib/css/react-big-calendar.c
 
 const localizer = momentLocalizer(moment)
 
-export default class Google extends Component {
+export default class GoogleCalendar extends Component {
   constructor(props: Props) {
     super(props);
     this.state = {
@@ -80,7 +80,7 @@ export default class Google extends Component {
   render() {
     console.log(this.state.events);
     return (
-      <div className="Google">
+      <div className="GoogleCalendar">
         <Calendar
             localizer={localizer}
             events={this.state.events}
