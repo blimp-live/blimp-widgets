@@ -10,10 +10,7 @@ import Countdown from './components/Countdown';
 import ScrollingText from './components/ScrollingText';
 import TwitterComponent from './components/Twitter';
 import Weather from './components/Weather';
-<<<<<<< e0f856fdeb80444858717493d7f6a5cb28f021c7
 
-=======
->>>>>>> Created weather widget
 // Export it here
 export {
   HelloWorld,
