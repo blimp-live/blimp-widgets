@@ -33,16 +33,15 @@ export default class Weather extends Component {
       .then(
         (result) => {
           //Need to do error checking here in case something is unavailable. Need some sort of standard though
-          console.log(result)
           this.setState({
             weather: {
               city: result.name,
               temperature: result.main.temp ,
               main: result.weather[0].main,
               description: result.weather[0].description,
-              units: this.state.weather.units
+              units: this.state.weather.units,
             },
-            isLoaded: true
+            isLoaded: true,
           });
         },
         // Note: it's important to handle errors here
@@ -59,7 +58,6 @@ export default class Weather extends Component {
 
   render() {
     const {error, isLoaded, weather} = this.state;
-    console.log(weather)
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
