@@ -9,8 +9,8 @@ import IFrameComponent from './components/iFrame';
 import Countdown from './components/Countdown';
 import ScrollingText from './components/ScrollingText';
 import TwitterComponent from './components/Twitter';
+import Weather from './components/Weather';
 
-// Export it here
 export {
   HelloWorld,
   ExampleComponent,
@@ -20,4 +20,5 @@ export {
   Countdown,
   ScrollingText,
   TwitterComponent,
+  Weather,
 }
