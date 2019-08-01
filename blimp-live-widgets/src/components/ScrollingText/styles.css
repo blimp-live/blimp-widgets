@@ -1,7 +1,8 @@
 .test {
-  height: 50px;  
+  height: 50px;
   overflow: hidden;
   position: relative;
+  width: 100%;
 }
 .test h3 {
   font-size: 3em;
@@ -14,9 +15,9 @@
   text-align: center;
  /* Starting position */
   -moz-transform:translateX(100%);
-  -webkit-transform:translateX(100%);    
+  -webkit-transform:translateX(100%);
   transform:translateX(100%);
- /* Apply animation to this element */  
+ /* Apply animation to this element */
   -moz-animation: example1 15s linear infinite;
   -webkit-animation: example1 15s linear infinite;
   animation: example1 15s linear infinite;
@@ -31,14 +32,14 @@
   100% { -webkit-transform: translateX(-100%); }
 }
 @keyframes example1 {
-  0%   { 
+  0%   {
   -moz-transform: translateX(100%); /* Firefox bug fix */
   -webkit-transform: translateX(100%); /* Firefox bug fix */
-  transform: translateX(100%);       
+  transform: translateX(100%);
  }
- 100% { 
+ 100% {
   -moz-transform: translateX(-100%); /* Firefox bug fix */
   -webkit-transform: translateX(-100%); /* Firefox bug fix */
-  transform: translateX(-100%); 
+  transform: translateX(-100%);
  }
 }
