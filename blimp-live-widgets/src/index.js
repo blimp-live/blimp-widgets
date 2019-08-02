@@ -9,9 +9,10 @@ import IFrameComponent from './components/iFrame';
 import Countdown from './components/Countdown';
 import ScrollingText from './components/ScrollingText';
 import TwitterComponent from './components/Twitter';
-import GoogleCalendar from './components/GoogleCalendar';
 
-// Export it here
+import GoogleCalendar from './components/GoogleCalendar';
+import Weather from './components/Weather';
+
 export {
   HelloWorld,
   ExampleComponent,
@@ -21,5 +22,7 @@ export {
   Countdown,
   ScrollingText,
   TwitterComponent,
+
   GoogleCalendar,
+  Weather,
 }
