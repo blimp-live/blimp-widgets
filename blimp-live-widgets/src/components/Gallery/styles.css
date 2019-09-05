@@ -1,0 +1,21 @@
+.galleryContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+}
+
+.leftArrow {
+
+}
+
+.rightArrow {
+
+}
+
+.gallery {
+  margin: auto 0;
+  min-width: 100%;
+  min-height: 100%
+}

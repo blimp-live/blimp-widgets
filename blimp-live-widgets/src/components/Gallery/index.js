@@ -84,13 +84,14 @@ export default class Gallery extends Component {
     let rightArrow;
 
     if(this.props.includeArrows && this.numImages !== 1) {
-      leftArrow = <div className="leftArrow" onClick={this.previousImage}> &#9664; </div>;
-      rightArrow = <div className="rightArrow" onClick={this.nextImage}> &#9654; </div>;
+      leftArrow = <div className={styles.leftArrow} onClick={this.previousImage}> &#9664; </div>;
+      rightArrow = <div className={styles.rightArrow} onClick={this.nextImage}> &#9654; </div>;
     }
+
     return (
-      <div>
+      <div className={styles.galleryContainer}>
         {leftArrow}
-        <img src={this.props.images[this.state.currentImageIndex]} />
+        <img className={styles.gallery} src={this.props.images[this.state.currentImageIndex]} />
         {rightArrow}
       </div>
     )
