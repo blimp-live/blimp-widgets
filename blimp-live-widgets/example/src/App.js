@@ -5,7 +5,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <Gallery/>
+        <Gallery interval={3000} images={['http://velocity.uwaterloo.ca/wp-content/uploads/2014/08/hackthenorthlogo-e1409325866917.png', 'http://velocity.uwaterloo.ca/wp-content/uploads/2016/08/assets_blue.png', 'https://uwaterloo.ca/engineering/sites/ca.engineering/files/uploads/images/hack_the_north.jpg']}/>
         <ExampleComponent
           text='Modern React component module'
           size="40px"
