@@ -24,27 +24,34 @@ export default class Gallery extends Component {
       currentImageIndex: 0
     };
 
+    this.numImages = this.props.images.length;
+
     // Binding next and previous functions
     this.nextImage = this.nextImage.bind(this);
     this.previousImage = this.previousImage.bind(this);
   }
 
   componentDidMount() {
-    this.imageInterval = setInterval(() => {
-      this.nextImage();
-    }, this.props.interval);
+    // There's no point in running the interval
+    // unless we have more than one image
+    if (this.numImages > 1) {
+      this.imageInterval = setInterval(() => {
+        this.nextImage();
+      }, this.props.interval);
+    }
   }
 
   componentWillUnmount() {
-    clearInterval(this.imageInterval);
+    if (this.numImages > 1) {
+      clearInterval(this.imageInterval);
+    }
   }
 
   nextImage() {
-    const numImages = this.props.images.length;
 
     // If we are currently at the last image, then we set the next image to the first one
     // else we increment the current image index
-    const nextImage = numImages-1 === this.state.currentImageIndex ? 0 : this.state.currentImageIndex + 1;
+    const nextImage = this.numImages-1 === this.state.currentImageIndex ? 0 : this.state.currentImageIndex + 1;
 
     // Update the state
     this.setState({
@@ -53,11 +60,9 @@ export default class Gallery extends Component {
   }
 
   previousImage() {
-    const numImages = this.props.images.length;
-
     // If we are currently at the 'first' image, then we set the next image to the last one
     // else we decrement the current image index
-    const nextImage = 0 === this.state.currentImageIndex ? numImages-1 : this.state.currentImageIndex - 1;
+    const nextImage = 0 === this.state.currentImageIndex ? this.numImages-1 : this.state.currentImageIndex - 1;
 
     // Update the state
     this.setState({
@@ -78,7 +83,7 @@ export default class Gallery extends Component {
     let leftArrow;
     let rightArrow;
 
-    if(this.props.includeArrows && this.props.images.length !== 1) {
+    if(this.props.includeArrows && this.numImages !== 1) {
       leftArrow = <div className="leftArrow" onClick={this.previousImage}> &#9664; </div>;
       rightArrow = <div className="rightArrow" onClick={this.nextImage}> &#9654; </div>;
     }
