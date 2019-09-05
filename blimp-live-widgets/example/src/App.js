@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
-import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent, Weather} from 'blimp-live-widgets'
+import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent, Weather, Gallery} from 'blimp-live-widgets'
 
 export default class App extends Component {
   render () {
     return (
       <div>
+        <Gallery/>
         <ExampleComponent
           text='Modern React component module'
           size="40px"
