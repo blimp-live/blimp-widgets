@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styles from './styles.css'
 
 /*
   The Gallery component takes in a collection of images
@@ -8,9 +9,11 @@ import PropTypes from 'prop-types'
   to navigate it as well
 */
 export default class Gallery extends Component {
+
   static propTypes = {
     interval: PropTypes.number,
     images: PropTypes.array,
+    includeArrows: PropTypes.boolean,
   }
 
   constructor(props) {
@@ -65,13 +68,25 @@ export default class Gallery extends Component {
   render() {
     const {
       interval,
-      images
+      images,
+      includeArrows,
     } = this.props
 
+    // Allowing for conditional arrow addition
+    // We will NOT render arrows if only one image is present
+    // or the props value includeArrows is false
+    let leftArrow;
+    let rightArrow;
+
+    if(this.props.includeArrows && this.props.images.length !== 1) {
+      leftArrow = <div className="leftArrow" onClick={this.previousImage}> &#9664; </div>;
+      rightArrow = <div className="rightArrow" onClick={this.nextImage}> &#9654; </div>;
+    }
     return (
       <div>
+        {leftArrow}
         <img src={this.props.images[this.state.currentImageIndex]} />
-        <
+        {rightArrow}
       </div>
     )
   }
