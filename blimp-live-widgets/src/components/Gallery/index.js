@@ -17,6 +17,7 @@ export default class Gallery extends Component {
     interval: PropTypes.number,
     images: PropTypes.array,
     includeArrows: PropTypes.boolean,
+    backgroundColor: PropTypes.string,
   }
 
   constructor(props) {
@@ -30,6 +31,9 @@ export default class Gallery extends Component {
     this.images = this.props.images;
 
     this.numImages = this.images.length;
+
+    // Setting background color
+    this.backgroundColor = this.props.backgroundColor || 'transparent';
 
     // Binding next and previous functions
     this.nextImage = this.nextImage.bind(this);
@@ -94,7 +98,7 @@ export default class Gallery extends Component {
     }
 
     return (
-      <div className={styles.galleryContainer}>
+      <div className={styles.galleryContainer} style={{backgroundColor: this.backgroundColor}}>
         {leftArrow}
         <img className={styles.gallery} src={this.images[this.state.currentImageIndex]} />
         {rightArrow}
