@@ -8,6 +8,9 @@ import styles from './styles.css'
   the images), but there will also be arrows in place that can be used
   to navigate it as well
 */
+
+const DEFAULT_IMAGE_DIRECTORY = './assets/';
+
 export default class Gallery extends Component {
 
   static propTypes = {
@@ -24,7 +27,9 @@ export default class Gallery extends Component {
       currentImageIndex: 0
     };
 
-    this.numImages = this.props.images.length;
+    this.images = this.props.images;
+
+    this.numImages = this.images.length;
 
     // Binding next and previous functions
     this.nextImage = this.nextImage.bind(this);
@@ -91,7 +96,7 @@ export default class Gallery extends Component {
     return (
       <div className={styles.galleryContainer}>
         {leftArrow}
-        <img className={styles.gallery} src={this.props.images[this.state.currentImageIndex]} />
+        <img className={styles.gallery} src={this.images[this.state.currentImageIndex]} />
         {rightArrow}
       </div>
     )
