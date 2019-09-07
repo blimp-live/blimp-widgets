@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Styles from './styles'
+import styles from './styles.css'
 import ClockLayout from './ClockLayout';
 import { cssTransform, updateTime } from './utils';
 import * as Themes from './themes';
@@ -46,8 +47,8 @@ export default class Clock extends Component {
   render() {
 
     return (
-      <div>
-        <ClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />
+      <div className = {styles.wrapper}>
+        <p className = {styles.clock}>{this.state.hour%12}:{this.state.minutes}:{this.state.seconds} { this.state.hour/12 > 0 ? "PM": "AM" }</p>
       </div>
     )
   }
