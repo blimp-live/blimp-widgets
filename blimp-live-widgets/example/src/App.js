@@ -5,8 +5,8 @@ export default class App extends Component {
 
   render () {
     const galleryContainerStyle = {
-      height: '80px',
-      width: '70px',
+      height: '100%',
+      width: '100%',
     };
     return (
       <div>
