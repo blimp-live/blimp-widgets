@@ -7,7 +7,6 @@ export default class Countdown extends Component {
   constructor(props: Props) {
     var currentTime = new Date()
     var htnStartTime = new Date(2019, 8, 13, 23, 30, 0, 0) // real HTN start time
-    // var htnStartTime = new Date(2019, 8, 7, 18, 0, 0, 0) // testing
 
     var totalMilliSeconds = htnStartTime - currentTime
     var totalSeconds = Math.floor(totalMilliSeconds / 1000)
@@ -38,9 +37,6 @@ export default class Countdown extends Component {
     } else if (!this.state.htnHackingStarted) {
       var htnStartTime = new Date(2019, 8, 13, 23, 30, 0, 0) // real HTN start time
       var htnStartEnd = new Date(2019, 8, 15, 9, 0, 0, 0) // real HTN end time
-
-      // var htnStartTime = new Date(2019, 8, 7, 18, 0, 0, 0) // testing
-      // var htnStartEnd = new Date(2019, 8, 7, 18, 1, 0, 0) // testing
 
       var totalMilliSeconds = htnStartEnd - htnStartTime
       var totalSeconds = Math.floor(totalMilliSeconds / 1000)
