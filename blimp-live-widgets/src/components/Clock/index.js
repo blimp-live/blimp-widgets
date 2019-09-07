@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-import Styles from './styles'
+import analogStyles from './styles'
+import digitalStyles from './styles.css'
 import ClockLayout from './ClockLayout';
 import { cssTransform, updateTime } from './utils';
 import * as Themes from './themes';
@@ -16,7 +17,7 @@ export default class Clock extends Component {
       minutes: date[1],
       hour: date[0],
     };
-    this.styles = cssTransform(Styles, props);
+    this.styles = cssTransform(analogStyles, props);
   }
 
   componentDidMount() {
@@ -26,7 +27,7 @@ export default class Clock extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.styles = cssTransform(Styles, nextProps);
+    this.styles = cssTransform(analogStyles, nextProps);
   }
 
   componentWillUnmount() {
@@ -46,8 +47,9 @@ export default class Clock extends Component {
   render() {
 
     return (
-      <div>
-        <ClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />
+      <div className = {digitalStyles.wrapper}>
+        {/*<ClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />*/}
+        <p className = {digitalStyles.clock}>{this.state.hour == 12 || this.state.hour == 0 ? 12 : this.state.hour%12}:{('0' + this.state.minutes).slice(-2)}:{('0' + this.state.seconds).slice(-2)} { this.state.hour/12 > 0 ? "PM": "AM" }</p>
       </div>
     )
   }
