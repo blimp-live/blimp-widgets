@@ -48,7 +48,8 @@ export default class Clock extends Component {
 
     return (
       <div className = {styles.wrapper}>
-        <p className = {styles.clock}>{this.state.hour%12}:{this.state.minutes}:{this.state.seconds} { this.state.hour/12 > 0 ? "PM": "AM" }</p>
+        {/*<ClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />*/}
+        <p className = {styles.clock}>{this.state.hour == 12 || this.state.hour == 0 ? 12 : this.state.hour%12}:{this.state.minutes}:{this.state.seconds} { this.state.hour/12 > 0 ? "PM": "AM" }</p>
       </div>
     )
   }
