@@ -1,7 +1,10 @@
-.city {
-    color:#ADD8E6;
+.city, .main, .temperature{
+  color:#373F57;
+  text-align:center;
+  margin: 1px;
 }
 
-.description, .main, .temperature{
-  color:#FED8B1;
+.wrapper {
+	padding: 5px;
+	background-color:#84E1FF;
 }
