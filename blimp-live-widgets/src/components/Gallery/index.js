@@ -39,7 +39,7 @@ export default class Gallery extends Component {
   static propTypes = {
     interval: PropTypes.number,
     images: PropTypes.array,
-    includeArrows: PropTypes.boolean,
+    includeArrows: PropTypes.bool,
     backgroundColor: PropTypes.string,
   }
 
