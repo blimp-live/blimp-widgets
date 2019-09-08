@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.css'
+
+// Importing images
 import map_01 from './assets/maps/building-maps-01.jpg'
 import map_02 from './assets/maps/building-maps-02.jpg'
 import map_03 from './assets/maps/building-maps-03.jpg'
