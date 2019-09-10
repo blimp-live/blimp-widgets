@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
 import styles from './styles.css'
+import sunny from './assets/sunny.png'
+import cloud from './assets/cloud.png'
+import rain from './assets/rain.png'
+import snow from './assets/snow.png'
+import thunder from './assets/thunder.png'
 
 export default class Weather extends Component {
   constructor(props) {
@@ -58,17 +63,39 @@ export default class Weather extends Component {
 
   render() {
     const {error, isLoaded, weather} = this.state;
+    var img_src = sunny
+    var temp_unit = "°C"
+    if (weather.units == "metric") {
+      temp_unit = "°C"
+    } else {
+      temp_unit = "°F"
+    }
+    if (weather.main == "Clouds") {
+      img_src = cloud
+    } else if (weather.main == "Clear") {
+      img_src = sunny
+    }
+    else if (weather.main == "Rain") {
+      img_src = rain
+    }
+    else if (weather.main == "Snow") {
+      img_src = snow
+    }
+    else if (weather.main == "Thunderstorm") {
+      img_src = thunder
+    }
     if (error) {
       return <div>Error: {error.message}</div>;
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
       return (
-        <div>
+        <div className = {styles.wrapper}>
           <h3 className = {styles.city}> {weather.city} </h3>
-          <p className = {styles.temperature}> {weather.temperature} </p>
-          <p className = {styles.main}> {weather.main} </p>
-          <p className = {styles.description}> {weather.description} </p>
+          <p className = {styles.temperature}> {weather.temperature}{temp_unit}</p>
+          <div className = {styles.main}>
+            <img src={ img_src } /> 
+          </div>
         </div>
       )
     }

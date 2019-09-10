@@ -12,6 +12,7 @@ import TwitterComponent from './components/Twitter';
 
 import GoogleCalendar from './components/GoogleCalendar';
 import Weather from './components/Weather';
+import Gallery from './components/Gallery';
 
 export {
   HelloWorld,
@@ -25,4 +26,5 @@ export {
 
   GoogleCalendar,
   Weather,
+  Gallery,
 }
