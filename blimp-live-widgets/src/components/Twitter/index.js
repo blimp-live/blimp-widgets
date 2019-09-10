@@ -19,22 +19,50 @@ export default class TwitterComponent extends Component {
 			};
 			return t;
 		}(document, "script", "twitter-wjs"));
+		window.twttr.ready(function (twttr) {
+			window.twttr.events.bind('rendered',function(){
+				[].slice.call(document.querySelectorAll('iframe.twitter-timeline')).forEach(function(e,i,a){
+
+				  var tweetText = e.contentDocument.getElementsByClassName('timeline-Tweet-text');
+				  if(tweetText.length){
+					for (var i = 0; i < tweetText.length; i++) {
+						tweetText[i].style.fontSize='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
+						tweetText[i].style.lineHeight='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
+						tweetText[i].style.fontSize='1.5vw';
+						tweetText[i].style.lineHeight='1.5vw';
+					}
+				  }
+				  var tweetTitle = e.contentDocument.getElementsByClassName('timeline-Header-title');
+				  if(tweetTitle.length){
+					for (var i = 0; i < tweetTitle.length; i++) {
+						tweetTitle[i].style.fontSize='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
+						tweetTitle[i].style.lineHeight='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
+						tweetTitle[i].style.fontSize='1.5vw';
+						tweetTitle[i].style.lineHeight='1.5vw';
+					}
+				  }
+				});
+			  });
+		});
+
   }
 
   render() {
-		var account = this.props.account ? this.props.account : "TwitterDev";
+		var account = this.props.account ? this.props.account : "HackTheNorth";
 
     return (
 			<div className={styles.twitterContainer}>
-				<div className="panel-heading">
+				{/* <div className="panel-heading">
 					 <h3 className="panel-title">
 							{account}
 					 </h3>
-				</div>
+				</div> */}
 				<div>
 					<a className="twitter-timeline"
 					  href={ "https://twitter.com/" + account }
-						data-chrome="nofooter">
+						data-chrome="nofooter"
+						data-tweet-limit="3"
+						>
 					</a>
 				</div>
 			</div>
