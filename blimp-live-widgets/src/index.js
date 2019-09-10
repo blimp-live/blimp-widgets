@@ -10,6 +10,7 @@ import Countdown from './components/Countdown';
 import ScrollingText from './components/ScrollingText';
 import TwitterComponent from './components/Twitter';
 import Weather from './components/Weather';
+import DateComponent from './components/DateComponent';
 
 export {
   HelloWorld,
@@ -21,4 +22,5 @@ export {
   ScrollingText,
   TwitterComponent,
   Weather,
+  DateComponent,
 }
