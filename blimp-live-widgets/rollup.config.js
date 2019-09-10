@@ -27,7 +27,9 @@ export default {
     postcss({
       modules: true
     }),
-    url(),
+    url({
+      limit: 10000 * 1024
+    }),
     svgr(),
     babel({
       exclude: 'node_modules/**',

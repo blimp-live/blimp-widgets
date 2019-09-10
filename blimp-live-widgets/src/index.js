@@ -11,6 +11,7 @@ import ScrollingText from './components/ScrollingText';
 import TwitterComponent from './components/Twitter';
 import Weather from './components/Weather';
 import DateComponent from './components/DateComponent';
+import Gallery from './components/Gallery';
 
 export {
   HelloWorld,
@@ -23,4 +24,5 @@ export {
   TwitterComponent,
   Weather,
   DateComponent,
+  Gallery,
 }
