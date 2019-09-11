@@ -11,6 +11,7 @@ import ScrollingText from './components/ScrollingText';
 import TwitterComponent from './components/Twitter';
 import Weather from './components/Weather';
 import Gallery from './components/Gallery';
+import Logo from './components/Logo';
 import DateComponent from './components/DateComponent';
 
 export {
@@ -24,5 +25,6 @@ export {
   TwitterComponent,
   Weather,
   Gallery,
+  Logo,
   DateComponent,
 }

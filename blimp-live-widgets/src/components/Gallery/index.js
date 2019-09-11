@@ -54,7 +54,7 @@ export default class Gallery extends Component {
     };
 
     this.images = this.props.images || DEFAULT_IMAGES;
-
+    this.interval = this.props.interval || 10000;
     this.numImages = this.images.length;
 
     // Setting background color
@@ -71,7 +71,7 @@ export default class Gallery extends Component {
     if (this.numImages > 1) {
       this.imageInterval = setInterval(() => {
         this.nextImage();
-      }, this.props.interval);
+      }, this.interval);
     }
   }
 
