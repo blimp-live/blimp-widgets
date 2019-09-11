@@ -23,6 +23,7 @@ export {
   ScrollingText,
   TwitterComponent,
   Weather,
+  DateComponent,
   Gallery,
   DateComponent,
 }
