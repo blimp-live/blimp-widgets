@@ -13,6 +13,7 @@ import Weather from './components/Weather';
 import Gallery from './components/Gallery';
 import Logo from './components/Logo';
 import DateComponent from './components/DateComponent';
+import Schedule from './components/Schedule';
 
 export {
   HelloWorld,
@@ -27,4 +28,5 @@ export {
   Gallery,
   Logo,
   DateComponent,
+  Schedule,
 }
