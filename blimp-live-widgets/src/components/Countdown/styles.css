@@ -2,11 +2,13 @@
   display: inline-block;
   background-color: #EABB9D;
   padding: 10px 10px 10px 10px; 
+  width: 100%;
+  text-align:center;
 }
 
 .countdownHeader {
   font-family: "Aldrich";
-  color: #183249;;
+  color: #183249;
 }
 
 .digit::selection {

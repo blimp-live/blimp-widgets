@@ -16,7 +16,7 @@ const IFrame = ({ source }) => {
   }
   const src = source;
   return (
-  	<div className="embedded-iframe">
+  	<div className="embedded-iframe" style ={{width:'100%'}}>
     	<iframe src={src}></iframe>
     </div>
   );
