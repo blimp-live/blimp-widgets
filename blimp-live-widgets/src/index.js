@@ -12,6 +12,7 @@ import TwitterComponent from './components/Twitter';
 import Weather from './components/Weather';
 import Gallery from './components/Gallery';
 import Logo from './components/Logo';
+import DateComponent from './components/DateComponent';
 
 export {
   HelloWorld,
@@ -25,4 +26,5 @@ export {
   Weather,
   Gallery,
   Logo,
+  DateComponent,
 }
