@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent, Weather, Gallery} from 'blimp-live-widgets'
+import {ExampleComponent, HelloWorld, IFrameComponent, Clock, ClockThemes, Countdown, ScrollingText, TwitterComponent, Weather, Gallery, DateComponent} from 'blimp-live-widgets'
 
 export default class App extends Component {
 
@@ -32,6 +32,7 @@ export default class App extends Component {
         <ScrollingText text='Here is a test' />
         <TwitterComponent account="HackTheNorth" />
         <Weather city="Toronto" units="metric"/>
+        <DateComponent />
       </div>
     )
   }
