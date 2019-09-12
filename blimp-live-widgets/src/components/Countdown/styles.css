@@ -7,8 +7,13 @@
 }
 
 .countdownHeader {
-  font-family: "Aldrich";
   color: #183249;
+  font-size: 1em;
+}
+
+.countdownSmallHeader {
+  color: #183249;
+  font-size: 0.5em;
 }
 
 .digit::selection {
@@ -22,20 +27,29 @@
   background: None;
 }
 
+.largeDigits {
+  font-size: 2em;
+}
+
+.mediumDigits {
+  font-size: 1.5em;
+}
+
+.smallDigits {
+  font-size: 0.7em;
+}
+
 .digit, .colon {
   border: none;
   color: transparent;
   text-shadow: 0 0 0 #373F57;
-  font-size: 2em;
   text-align: center;
-  width: 1.6em;
+  width: 1.5em;
   outline-width: 0;
-  font-family: "Aldrich";
   background-color: #EABB9D;
 }
 
 .button {
   width: 33.3%;
-  font-family: "Aldrich";
   padding: 3px;
 }

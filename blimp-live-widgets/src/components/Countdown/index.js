@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import styles from './styles.css'
 
 export default class Countdown extends Component {
-  constructor(props: Props) {
+  constructor(props) {
     var currentTime = new Date()
     var htnStartTime = new Date(2019, 8, 13, 23, 30, 0, 0) // real HTN start time
 
@@ -26,7 +26,9 @@ export default class Countdown extends Component {
       hours: hours,
       countdown: false,
       htnTitle: 'Time until hacking starts',
-      htnHackingStarted: false
+      htnShortTitle: 'Hacking starts:',
+      htnHackingStarted: false,
+      width: 0
     }
     this.startCountdown()
   }
@@ -36,9 +38,9 @@ export default class Countdown extends Component {
       this.formatTime()
     } else if (!this.state.htnHackingStarted) {
       var htnStartTime = new Date(2019, 8, 13, 23, 30, 0, 0) // real HTN start time
-      var htnStartEnd = new Date(2019, 8, 15, 9, 0, 0, 0) // real HTN end time
+      var htnEndTime = new Date(2019, 8, 15, 8, 0, 0, 0) // real HTN end time
 
-      var totalMilliSeconds = htnStartEnd - htnStartTime
+      var totalMilliSeconds = htnEndTime - htnStartTime
       var totalSeconds = Math.floor(totalMilliSeconds / 1000)
       var timeRemaining = totalSeconds
 
@@ -53,6 +55,7 @@ export default class Countdown extends Component {
         minutes: minutes,
         hours: hours,
         htnTitle: 'Time until hacking ends',
+        htnShortTitle: 'Hacking ends:',
         htnHackingStarted: true
       })
     } else {
@@ -97,6 +100,7 @@ export default class Countdown extends Component {
     if (!this.state.countdown && this.state.timeRemaining > 0) {
       this.timer = setInterval(() => {
         this.decrementTimeRemaining()
+        this.checkWidth()
       }, 1000)
       this.state.countdown = true
     }
@@ -112,6 +116,12 @@ export default class Countdown extends Component {
   };
   handleFocus = (event) => event.target.select();
 
+  checkWidth = () => {
+    this.state.width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+  }
+
   render() {
     const { seconds, minutes, hours } = this.state
     let displaySec = ('0' + seconds).slice(-2)
@@ -120,18 +130,41 @@ export default class Countdown extends Component {
     if (displayHr.length < 2) {
       displayHr = ('0' + hours)
     }
+    
+    var title = 
+      <div className={styles.countdownHeader}>
+        {this.state.htnTitle}
+      </div>;
+
+    var digitsStyling = styles.largeDigits;
+    var colonStyling = styles.largeDigits;
+    if (this.state.width <= 830) {
+      title = 
+        <div className={styles.countdownHeader}>
+          {this.state.htnShortTitle}
+        </div>;
+        digitsStyling = styles.mediumDigits;
+        colonStyling = styles.mediumDigits;
+    } 
+    if (this.state.width <= 450) {
+      title = 
+        <div className={styles.countdownSmallHeader}>
+          {this.state.htnShortTitle}
+        </div>;
+        digitsStyling = styles.smallDigits;
+        colonStyling = styles.smallDigits;
+    } 
+
 
     return (
       <div className={styles.countdown}>
-        <div className={styles.countdownHeader}>
-          {this.state.htnTitle}
-        </div>
+        { title }
         <div>
-          <input className={styles.digit} type='text' value={displayHr} onClick={this.handleFocus} onChange={this.changeHours} />
-          <span className={styles.colon}>:</span>
-          <input className={styles.digit} type='text' value={displayMin} onClick={this.handleFocus} onChange={this.changeMinutes} />
-          <span className={styles.colon}>:</span>
-          <input className={styles.digit} size='1' type='text' value={displaySec} onClick={this.handleFocus} onChange={this.changeSeconds} />
+          <input className={`${styles.digit} ${digitsStyling}`} type='text' value={displayHr} onClick={this.handleFocus} onChange={this.changeHours} />
+          <span className={`${styles.colon} ${colonStyling}`}>:</span>
+          <input className={`${styles.digit} ${digitsStyling}`} type='text' value={displayMin} onClick={this.handleFocus} onChange={this.changeMinutes} />
+          <span className={`${styles.colon} ${colonStyling}`}>:</span>
+          <input className={`${styles.digit} ${digitsStyling}`} size='1' type='text' value={displaySec} onClick={this.handleFocus} onChange={this.changeSeconds} />
           <br />
         </div>
         {/* <button className={styles.button} onClick={this.startCountdown}> Start </button>
