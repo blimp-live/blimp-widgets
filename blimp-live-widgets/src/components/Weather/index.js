@@ -91,8 +91,10 @@ export default class Weather extends Component {
     } else {
       return (
         <div className = {styles.wrapper}>
-          <h3 className = {styles.city}> {weather.city} </h3>
-          <p className = {styles.temperature}> {weather.temperature}{temp_unit}</p>
+          <div className = {styles.textwrapper}>
+            <h3 className = {styles.city}> {weather.city} </h3>
+            <p className = {styles.temperature}> {Math.round(weather.temperature)}{temp_unit}</p>
+          </div>
           <div className = {styles.main}>
             <img src={ img_src } />
           </div>
