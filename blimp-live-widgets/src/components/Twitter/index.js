@@ -32,13 +32,16 @@ export default class TwitterComponent extends Component {
 						tweetText[i].style.lineHeight='1.5vw';
 					}
 				  }
-				  var tweetTitle = e.contentDocument.getElementsByClassName('timeline-Header-title');
-				  if(tweetTitle.length){
-					for (var i = 0; i < tweetTitle.length; i++) {
-						tweetTitle[i].style.fontSize='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
-						tweetTitle[i].style.lineHeight='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
-						tweetTitle[i].style.fontSize='1.5vw';
-						tweetTitle[i].style.lineHeight='1.5vw';
+				  var tweetHeader = e.contentDocument.getElementsByClassName('timeline-Header');
+				  if(tweetHeader.length){
+					for (var i = 0; i < tweetHeader.length; i++) {
+						tweetHeader[i].style.display='none';
+					}
+				  }
+				  var timelineWidget = e.contentDocument.getElementsByClassName('timeline-Widget');
+				  if(timelineWidget.length){
+					for (var i = 0; i < timelineWidget.length; i++) {
+						timelineWidget[i].style.borderRadius='0px';
 					}
 				  }
 				});
