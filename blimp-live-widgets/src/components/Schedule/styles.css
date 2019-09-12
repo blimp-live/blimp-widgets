@@ -1,11 +1,11 @@
 .event {
   margin: 0 auto;
-  margin-top: 2px;
+  margin-top: 4px;
 
-  height: 10vh;
+  height: 15vh;
   width: 60vh;
   background: #EFF8FA;
-  border: 1px solid #7E7E7E;
+  border: 1px solid #E5E5E5;
   border-radius: 3px/6px;
   display: flex;
   align-items: center;
@@ -14,6 +14,7 @@
 .time {
   border: 1px solid #ccc;
   height: 70%;
+  width: 20%;
   padding: 5px;
   text-align: center;
   /* background-color: teal; */
@@ -34,11 +35,12 @@
 .info {
   float: left;
   padding: 5px;
+  width: 80%;
 }
 
 .title {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: bold;
   text-shadow: 0px 0px 8px #DCDCDC;
   color: #181818;

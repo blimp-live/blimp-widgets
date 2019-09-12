@@ -2,6 +2,15 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.css'
 
+const category_to_color_mappings = {
+  'logistics': '#FFC684',
+  'food': '#2F465B',
+  'workshop': '#FC5430',
+  'talk': '#84E1FF',
+  'lightning_challenge': '#EABB9D',
+  'activities': '#85EFC3'
+}
+
 const EventRender = ({events}) => (
   <div>
     {events.map(ev => (
@@ -31,10 +40,6 @@ const EventRender = ({events}) => (
   </div>
 );
 
-// <div className={styles.location}>
-//   {ev.tags[0]}
-// </div>
-
 export default class Schedule extends Component {
   constructor(props) {
     super(props);
@@ -47,18 +52,7 @@ export default class Schedule extends Component {
     var count = 35; var schedule_arr = [];
     schedule.forEach(function (ev, index) {
       if (Date.now() <= new Date(ev.start_time) && count > 0) {
-        var color = '#183249'; //activities
-        if (ev.tags[0] == 'logistics') {
-          color = '#FFC684';
-        } else if (ev.tags[0] == 'food') {
-          color = '#61ADD8';
-        } else if (ev.tags[0] == 'workshop') {
-          color = '#D25466';
-        } else if (ev.tags[0] == 'talk') {
-          color = '#85EFC3';
-        } else if (ev.tags[0] == 'lightning challenge') {
-          color = '#EABB9D';
-        }
+        var color = category_to_color_mappings[ev.tags[0]];
         schedule_arr.push([ev, color]);
         count--;
       }
