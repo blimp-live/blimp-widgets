@@ -58,7 +58,7 @@ export default class Gallery extends Component {
     this.numImages = this.images.length;
 
     // Setting background color
-    this.backgroundColor = this.props.backgroundColor || 'transparent';
+    this.backgroundColor = this.props.backgroundColor || 'white';
 
     // Binding next and previous functions
     this.nextImage = this.nextImage.bind(this);
