@@ -28,8 +28,8 @@ export default class TwitterComponent extends Component {
 					for (var i = 0; i < tweetText.length; i++) {
 						tweetText[i].style.fontSize='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
 						tweetText[i].style.lineHeight='20px'; //This is a backup in case vw doesn't work (e.g. old browser)
-						tweetText[i].style.fontSize='1.5vw';
-						tweetText[i].style.lineHeight='1.5vw';
+						tweetText[i].style.fontSize='3vw';
+						tweetText[i].style.lineHeight='4vw';
 					}
 				  }
 				  var tweetHeader = e.contentDocument.getElementsByClassName('timeline-Header');
