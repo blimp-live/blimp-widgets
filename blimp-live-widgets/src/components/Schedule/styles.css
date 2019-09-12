@@ -1,61 +1,54 @@
 .event {
-  margin: 0 auto;
-  margin-top: 4px;
-
-  height: 15vh;
-  width: 60vh;
+  width: 100%;
   background: #EFF8FA;
-  border: 1px solid #E5E5E5;
-  border-radius: 3px/6px;
+  border-bottom: 1px solid #E5E5E5;
   display: flex;
   align-items: center;
+  align-content: stretch;
 }
 
-.time {
-  border: 1px solid #ccc;
-  height: 70%;
-  width: 20%;
-  padding: 5px;
-  text-align: center;
-  /* background-color: teal; */
-  border-radius: 3px/6px;
-  margin: 5px;
+.borderLeft {
+  flex-basis: 30px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  width: 30px;
+  margin-right: 15px;
+  align-self: stretch;
 }
 
 .timeText {
-  font-family: Arial, Helvetica, sans-serif;
+  width: 150px;
+  flex-grow: 0;
+  flex-shrink: 0;
   font-size: 17px;
-  font-weight: bold;
-  color: white;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+  color: #232323;
+  text-align: right;
+  padding-right: 30px;
 }
 
 .info {
-  float: left;
-  padding: 5px;
-  width: 80%;
+  flex-grow: 1;
+  flex-shrink: 1;
+  padding: 10px;
+  margin-right: 30px;
 }
 
 .title {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 18px;
-  font-weight: bold;
-  text-shadow: 0px 0px 8px #DCDCDC;
-  color: #181818;
+  font-weight: 500;
+  color: #232323;;
   margin-bottom: 4px;
 }
 
 .location {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
-  text-shadow: 0px 0px 8px #DCDCDC;
-  color: #181818;
+  font-weight: 500;
+  color: #797979;
   margin-bottom: 4px;
 }
 
 .tag {
-  font-family: Arial, Helvetica, sans-serif;
   font-size: 15px;
+  font-weight: bold;
+  margin-top: 5px;
 }
