@@ -1,11 +1,27 @@
 .city, .main, .temperature{
   color:#373F57;
-  text-align:center;
-  margin: 1px;
+  text-align:right;
+  font-size: 16px;
+  margin: 0;
 }
+
+.main {
+	width:80px;
+	right: 25%;
+	position:absolute;
+}
+
+.textwrapper {
+	left:25%;
+	top:25%;
+	position:absolute;
+}
+
 
 .wrapper {
   padding: 5px;
   background-color:#84E1FF;
   width:100%;
+  display:flex;
+  position:relative;
 }
