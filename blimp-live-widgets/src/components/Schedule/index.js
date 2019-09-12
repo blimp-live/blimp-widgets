@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import styles from './styles.css'
 
+import { jsonObject } from './schedule.js'
+
 const category_to_color_mappings = {
   'logistics': '#FFC684',
   'food': '#2F465B',
@@ -63,9 +65,8 @@ export default class Schedule extends Component {
   };
 
   componentDidMount() {
-    const schedule = require('./schedule.json');
     this.timer = setInterval(() => {
-      this.getEvents(schedule);
+      this.getEvents(jsonObject());
     }, 1000);
   }
 
