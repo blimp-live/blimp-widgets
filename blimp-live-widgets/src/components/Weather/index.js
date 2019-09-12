@@ -31,7 +31,7 @@ export default class Weather extends Component {
     if(this.props.units) {
       this.state.weather.units = this.props.units
     }
-    fetch("http://api.openweathermap.org/data/2.5/weather?q="+this.state.weather.city+"&units="+this.state.weather.units+"&appid=d79a0d378573a8b844d4a8b7e1c963d6")
+    fetch("https://api.openweathermap.org/data/2.5/weather?q="+this.state.weather.city+"&units="+this.state.weather.units+"&appid=d79a0d378573a8b844d4a8b7e1c963d6")
       .then(function(res){
         return res.json();
       })
@@ -94,7 +94,7 @@ export default class Weather extends Component {
           <h3 className = {styles.city}> {weather.city} </h3>
           <p className = {styles.temperature}> {weather.temperature}{temp_unit}</p>
           <div className = {styles.main}>
-            <img src={ img_src } /> 
+            <img src={ img_src } />
           </div>
         </div>
       )
