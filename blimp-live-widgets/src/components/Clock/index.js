@@ -16,6 +16,8 @@ export default class Clock extends Component {
       seconds: date[2],
       minutes: date[1],
       hour: date[0],
+      width: 1000,
+      height: 1000,
     };
     this.styles = cssTransform(analogStyles, props);
   }
@@ -23,6 +25,7 @@ export default class Clock extends Component {
   componentDidMount() {
     this.interval = setInterval(() => {
       this.setState(updateTime(this.state));
+      this.checkScreen()
     }, 1000);
   }
 
@@ -44,12 +47,30 @@ export default class Clock extends Component {
     }
   }
 
+  checkScreen = () => {
+    this.state.width = window.innerWidth
+    || document.documentElement.clientWidth
+    || document.body.clientWidth;
+
+    this.state.height = window.innerHeight
+    || document.documentElement.clientHeight
+    || document.body.clientHeight;
+  }
+
   render() {
+
+    var digitsStyling = digitalStyles.largeDigits;
+    if (this.state.width <= 830 || this.state.height <= 500) {
+        digitsStyling = digitalStyles.mediumDigits;
+    } 
+    if (this.state.width <= 450 || this.state.height <= 350) {
+        digitsStyling = digitalStyles.smallDigits;
+    } 
 
     return (
       <div className = {digitalStyles.wrapper}>
         {/*<ClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />*/}
-        <p className = {digitalStyles.clock}>{this.state.hour == 12 || this.state.hour == 0 ? 12 : this.state.hour%12}:{('0' + this.state.minutes).slice(-2)}:{('0' + this.state.seconds).slice(-2)} { this.state.hour/12 > 0 ? "pm": "am" }</p>
+        <p className = {`${digitalStyles.clock} ${digitsStyling}`} >{this.state.hour == 12 || this.state.hour == 0 ? 12 : this.state.hour%12}:{('0' + this.state.minutes).slice(-2)}:{('0' + this.state.seconds).slice(-2)} { this.state.hour/12 > 0 ? "pm": "am" }</p>
       </div>
     )
   }
