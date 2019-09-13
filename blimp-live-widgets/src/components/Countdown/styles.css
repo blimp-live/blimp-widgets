@@ -1,17 +1,19 @@
 .countdown {
   display: inline-block;
   background-color: #EABB9D;
-  padding: 10px 10px 10px 10px; 
+  padding: 10px 10px 10px 10px;
   width: 100%;
-  text-align:center;
+  text-align: center;
 }
 
 .countdownHeader {
+  font-family: "Castledown";
   color: #183249;
-  font-size: 1em;
+  font-size: 1.75vh;
 }
 
 .countdownSmallHeader {
+  font-family: "Castledown";
   color: #183249;
   font-size: 0.5em;
 }
@@ -29,14 +31,17 @@
 
 .largeDigits {
   font-size: 2em;
+  font-family: "Castledown";
 }
 
 .mediumDigits {
-  font-size: 1.5em;
+  font-size: 1.75vh;
+  font-family: "Castledown";
 }
 
 .smallDigits {
   font-size: 0.7em;
+  font-family: "Castledown";
 }
 
 .digit, .colon {

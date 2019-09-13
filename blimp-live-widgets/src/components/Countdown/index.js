@@ -25,7 +25,7 @@ export default class Countdown extends Component {
       minutes: minutes,
       hours: hours,
       countdown: false,
-      htnTitle: 'Time until hacking starts',
+      htnTitle: 'until hacking starts',
       htnShortTitle: 'Hacking starts:',
       htnHackingStarted: false,
       width: 0
@@ -54,8 +54,8 @@ export default class Countdown extends Component {
         seconds: seconds,
         minutes: minutes,
         hours: hours,
-        htnTitle: 'Time until hacking ends',
-        htnShortTitle: 'Hacking ends:',
+        htnTitle: 'until hacking ends',
+        // htnShortTitle: 'Hacking ends:',
         htnHackingStarted: true
       })
     } else {
@@ -130,35 +130,40 @@ export default class Countdown extends Component {
     if (displayHr.length < 2) {
       displayHr = ('0' + hours)
     }
-    
-    var title = 
+
+    var title =
       <div className={styles.countdownHeader}>
         {this.state.htnTitle}
       </div>;
 
     var digitsStyling = styles.largeDigits;
     var colonStyling = styles.largeDigits;
-    if (this.state.width <= 830) {
-      title = 
-        <div className={styles.countdownHeader}>
-          {this.state.htnShortTitle}
-        </div>;
-        digitsStyling = styles.mediumDigits;
-        colonStyling = styles.mediumDigits;
-    } 
-    if (this.state.width <= 450) {
-      title = 
-        <div className={styles.countdownSmallHeader}>
-          {this.state.htnShortTitle}
-        </div>;
-        digitsStyling = styles.smallDigits;
-        colonStyling = styles.smallDigits;
-    } 
+    title =
+      <div className={styles.countdownHeader}>
+        {this.state.htnTitle}
+      </div>;
+    digitsStyling = styles.mediumDigits;
+    colonStyling = styles.mediumDigits;
+    // if (this.state.width <= 830) {
+    //   title =
+    //     <div className={styles.countdownHeader}>
+    //       {this.state.htnShortTitle}
+    //     </div>;
+    //     digitsStyling = styles.mediumDigits;
+    //     colonStyling = styles.mediumDigits;
+    // }
+    // if (this.state.width <= 450) {
+    //   title =
+    //     <div className={styles.countdownSmallHeader}>
+    //       {this.state.htnShortTitle}
+    //     </div>;
+    //     digitsStyling = styles.smallDigits;
+    //     colonStyling = styles.smallDigits;
+    // }
 
 
     return (
       <div className={styles.countdown}>
-        { title }
         <div>
           <input className={`${styles.digit} ${digitsStyling}`} type='text' value={displayHr} onClick={this.handleFocus} onChange={this.changeHours} />
           <span className={`${styles.colon} ${colonStyling}`}>:</span>
@@ -167,6 +172,7 @@ export default class Countdown extends Component {
           <input className={`${styles.digit} ${digitsStyling}`} size='1' type='text' value={displaySec} onClick={this.handleFocus} onChange={this.changeSeconds} />
           <br />
         </div>
+        { title }
         {/* <button className={styles.button} onClick={this.startCountdown}> Start </button>
         <button className={styles.button} onClick={this.stopCountdown}> Stop </button>
         <button className={styles.button} onClick={this.resetCountdown}> Reset </button> */}
