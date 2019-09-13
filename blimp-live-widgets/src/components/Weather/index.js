@@ -92,8 +92,8 @@ export default class Weather extends Component {
       return (
         <div className = {styles.wrapper}>
           <div className = {styles.textwrapper}>
-            <h3 className = {styles.city}> {weather.city} </h3>
             <p className = {styles.temperature}> {Math.round(weather.temperature)}{temp_unit}</p>
+            <h3 className = {styles.city}>In {weather.city} </h3>
           </div>
           <div className = {styles.main}>
             <img src={ img_src } />
