@@ -1,11 +1,25 @@
 .clock {
 	color: #373F57;
-	font-size: 32px;
+	font-family: "Castledown";
+	display: block;
+	margin: 0 auto;
+}
+
+.largeDigits {
+	font-size: 2em;
+}
+
+.mediumDigits {
+	font-size: 1.5em;
+}
+
+.smallDigits {
+	font-size: 1em;
 }
 
 .wrapper {
 	width: 100%;
 	background-color: #85EFC3;
 	text-align:center;
-	padding: 5px;
+	padding: 5%;
 }
