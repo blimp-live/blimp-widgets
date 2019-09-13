@@ -30,7 +30,7 @@ export default class App extends Component {
           />
         <HelloWorld />
         <IFrameComponent url="https://www.youtube.com/embed/dvgZkm1xWPE" />
-        <Clock width={300} theme={ClockThemes.navy} showSmallTicks={false}/>
+        <Clock width={300} showSmallTicks={false}/>
         <Countdown />
         <Schedule />
         <ScrollingText text='Here is a test' />
