@@ -3,6 +3,7 @@
   text-align:right;
   font-size: 16px;
   margin: 0;
+  font-family: "Castledown";
 }
 
 .main {
@@ -15,7 +16,6 @@
 	left:25%;
 	top:25%;
 	position:absolute;
-  font-family: "Castledown";
 }
 
 
@@ -25,6 +25,9 @@
   width:100%;
   display:flex;
   position:relative;
-  font-family: "Castledown";
 
+}
+
+.weatherpic {
+  width:80px;
 }

@@ -96,7 +96,7 @@ export default class Weather extends Component {
             <h3 className = {styles.city}>In {weather.city} </h3>
           </div>
           <div className = {styles.main}>
-            <img src={ img_src } />
+            <img src={ img_src } className = {styles.weatherpic}/>
           </div>
         </div>
       )
