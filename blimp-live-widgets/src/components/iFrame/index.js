@@ -3,7 +3,7 @@ import styles from './styles.css'
 
 export default class IFrameComponent extends Component {
 	render() {
-		var sourceUrl = this.props.url ? this.props.url : "https://www.youtube.com/watch?v=NJbKtYZCk4U";
+		var sourceUrl = this.props.url ? this.props.url : "https://www.youtube.com/embed/NJbKtYZCk4U";
 		console.log(sourceUrl);
 		return (
 			<IFrame source={sourceUrl} />
