@@ -3,17 +3,15 @@ import PropTypes from 'prop-types'
 import styles from './styles.css'
 
 // Importing images
-import map_01 from './assets/maps/building-maps-01.jpg'
-import map_02 from './assets/maps/building-maps-02.jpg'
-import map_03 from './assets/maps/building-maps-03.jpg'
-import map_04 from './assets/maps/building-maps-04.jpg'
-import map_05 from './assets/maps/building-maps-05.jpg'
-import map_06 from './assets/maps/building-maps-06.jpg'
-import map_07 from './assets/maps/building-maps-07.jpg'
-import map_08 from './assets/maps/building-maps-08.jpg'
-import map_09 from './assets/maps/building-maps-09.jpg'
-import map_10 from './assets/maps/building-maps-10.jpg'
-import map_11 from './assets/maps/building-maps-11.jpg'
+import map_01 from './assets/Something-1.png'
+import map_02 from './assets/Something-2.png'
+import map_03 from './assets/Something-3.png'
+import map_04 from './assets/Something-4.png'
+import map_05 from './assets/Something-5.png'
+import map_06 from './assets/Something-6.png'
+import map_07 from './assets/Something-7.png'
+import map_08 from './assets/Something-8.png'
+import map_09 from './assets/Something.png'
 
 /*
   The Gallery component takes in a collection of images
@@ -31,9 +29,7 @@ const DEFAULT_IMAGES = [
   map_06,
   map_07,
   map_08,
-  map_09,
-  map_10,
-  map_11
+  map_09
 ]
 
 export default class Gallery extends Component {

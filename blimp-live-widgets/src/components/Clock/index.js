@@ -70,7 +70,7 @@ export default class Clock extends Component {
     return (
       <div className = {digitalStyles.wrapper}>
         {/*<ClockLayout {...this.state} styles={this.styles} showSmallTicks={this.props.showSmallTicks} />*/}
-        <p className = {`${digitalStyles.clock} ${digitsStyling}`} >{this.state.hour == 12 || this.state.hour == 0 ? 12 : this.state.hour%12}:{('0' + this.state.minutes).slice(-2)}:{('0' + this.state.seconds).slice(-2)} { this.state.hour >= 12 ? "pm": "am" }</p>
+        <p className = {`${digitalStyles.clock} ${digitsStyling}`} >{this.state.hour == 12 || this.state.hour == 0 ? 12 : this.state.hour%12}:{('0' + this.state.minutes).slice(-2)}:{('0' + this.state.seconds).slice(-2)}{ this.state.hour >= 12 ? "pm": "am" }</p>
       </div>
     )
   }

@@ -18,7 +18,7 @@ export default class Logo extends Component {
   render() {
 
     return (
-      <div id="container" style={{backgroundColor: this.backgroundColor}} >
+      <div id={styles.container} style={{backgroundColor: this.backgroundColor}} >
         <img src={logo} />
       </div>
     )
